@@ -146,6 +146,9 @@ h3 { letter-spacing: -.025em; }
 .price-card li::before { content: "✓"; color: #8ce7df; margin-right: 9px; }
 .price-card .btn { width: 100%; }
 
+.pricing-notes { margin-top: 30px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.pricing-notes p { margin: 0; padding: 10px 15px; border: 1px solid var(--line); border-radius: 999px; color: #dce6f3; background: rgba(255,255,255,.035); font-size: 13px; }
+
 .contact-section { border-top: 1px solid var(--line); }
 .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: start; }
 .contact-copy > p { color: var(--muted); }
