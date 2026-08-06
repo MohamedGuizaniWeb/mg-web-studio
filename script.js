@@ -7,7 +7,13 @@ const langButton = document.querySelector(".lang-btn");
 const form = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
 const submitButton = form?.querySelector('button[type="submit"]');
-let language = "en";
+
+// Automatically use French when the visitor's browser/device prefers French.
+// English is the default for every other language.
+const preferredLocale = (navigator.languages && navigator.languages.length
+  ? navigator.languages[0]
+  : navigator.language || "en").toLowerCase();
+let language = preferredLocale.startsWith("fr") ? "fr" : "en";
 
 const messages = {
   en: {
@@ -36,16 +42,30 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
   });
 });
 
-langButton?.addEventListener("click", () => {
-  language = language === "en" ? "fr" : "en";
+function applyLanguage(nextLanguage) {
+  language = nextLanguage === "fr" ? "fr" : "en";
   document.documentElement.lang = language;
-  langButton.textContent = language === "en" ? "FR" : "EN";
+
+  if (langButton) {
+    langButton.textContent = language === "en" ? "FR" : "EN";
+    langButton.setAttribute(
+      "aria-label",
+      language === "en" ? "Passer au français" : "Switch to English"
+    );
+  }
 
   document.querySelectorAll("[data-en][data-fr]").forEach((element) => {
     element.textContent = element.dataset[language];
   });
 
   if (formStatus) formStatus.textContent = "";
+}
+
+// Apply the visitor's preferred language as soon as the page loads.
+applyLanguage(language);
+
+langButton?.addEventListener("click", () => {
+  applyLanguage(language === "en" ? "fr" : "en");
 });
 
 form?.addEventListener("submit", async (event) => {
