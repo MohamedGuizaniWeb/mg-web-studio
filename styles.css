@@ -264,3 +264,133 @@ h3 { letter-spacing: -.025em; }
 .project-link:hover .project-arrow {
   transform: translate(3px, -3px);
 }
+
+
+/* Better auto detailing portfolio preview */
+.project-preview.detailing {
+  background:
+    radial-gradient(circle at 82% 24%, rgba(255,255,255,.10), transparent 18%),
+    radial-gradient(circle at 70% 78%, rgba(255,255,255,.12), transparent 20%),
+    linear-gradient(135deg, #111418, #2f3945 54%, #202833 100%);
+}
+.project-preview.detailing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 20%, rgba(255,255,255,.08) 48%, transparent 72%);
+  opacity: .55;
+  pointer-events: none;
+}
+.project-preview.detailing::after {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  right: -45px;
+  bottom: -58px;
+  background: rgba(255,255,255,.10);
+}
+.detailing-preview-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 26px;
+}
+.detailing-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  color: #dbe8f7;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(10, 14, 20, .35);
+  backdrop-filter: blur(6px);
+}
+.detailing-preview-hero {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 12px;
+  align-items: end;
+  min-height: 200px;
+}
+.detailing-copy-lines {
+  align-self: start;
+  padding-top: 8px;
+}
+.detailing-copy-lines .line,
+.detailing-copy-lines .mini-cta {
+  display: block;
+  border-radius: 999px;
+}
+.detailing-copy-lines .line.long { width: 86%; height: 14px; background: rgba(255,255,255,.92); margin-bottom: 14px; }
+.detailing-copy-lines .line.mid { width: 68%; height: 9px; background: rgba(255,255,255,.68); margin-bottom: 11px; }
+.detailing-copy-lines .line.short { width: 48%; height: 9px; background: rgba(255,255,255,.55); margin-bottom: 24px; }
+.detailing-copy-lines .mini-cta { width: 88px; height: 32px; background: rgba(255,255,255,.94); }
+.detailing-car-scene {
+  position: relative;
+  min-height: 170px;
+}
+.detailing-shine {
+  position: absolute;
+  width: 68%;
+  height: 30%;
+  left: 17%;
+  bottom: 8%;
+  background: rgba(255,255,255,.14);
+  filter: blur(18px);
+  border-radius: 50%;
+}
+.detailing-car-body {
+  position: absolute;
+  width: 94%;
+  height: 30%;
+  left: 3%;
+  bottom: 24%;
+  background: linear-gradient(180deg, #9ca3ad 0%, #59626d 28%, #21272f 64%, #10141a 100%);
+  border-radius: 45% 55% 14% 18% / 54% 60% 20% 25%;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.40), 0 18px 30px rgba(0,0,0,.34);
+}
+.detailing-car-body::before {
+  content: "";
+  position: absolute;
+  width: 46%;
+  height: 78%;
+  left: 26%;
+  top: -48%;
+  background: linear-gradient(145deg, #727b85, #293039 68%);
+  clip-path: polygon(10% 100%, 30% 8%, 78% 8%, 100% 100%);
+  border-radius: 22px;
+}
+.detailing-car-body::after {
+  content: "";
+  position: absolute;
+  left: 14%;
+  top: 12%;
+  width: 70%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.85), transparent);
+}
+.detailing-wheel {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  bottom: 15%;
+  background: radial-gradient(circle, #20242b 0 18%, #8d96a2 19% 25%, #111 26% 55%, #050505 56%);
+  box-shadow: 0 0 0 3px #07090b;
+}
+.wheel-left { left: 17%; }
+.wheel-right { right: 14%; }
+@media (max-width: 720px) {
+  .detailing-preview-hero { min-height: 160px; }
+  .detailing-wheel { width: 38px; height: 38px; }
+  .detailing-copy-lines .line.long { height: 12px; }
+  .detailing-copy-lines .mini-cta { width: 76px; height: 26px; }
+}
