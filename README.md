@@ -1,22 +1,11 @@
-# MG Web Studio Portfolio
+# MG Web Studio
 
-A responsive one-page portfolio website for MG Web Studio.
+Static portfolio website for MG Web Studio.
 
-## Current setup
+## Publish
+Upload the files in this folder to the root of the GitHub repository connected to Cloudflare.
 
-- Contact email: guizanimohamed831@gmail.com
-- Phone: +1 (514) 268-1620
-- Starter package: $299 CAD
-- Business package: $599 CAD
-- Premium package: $899 CAD
-- Maintenance: starting at $49 CAD/month
+## Contact form
+The form sends submissions directly to `guizanimohamed831@gmail.com` through FormSubmit's AJAX endpoint, so the visitor stays on the website.
 
-## Publish updates
-
-Upload the updated files to the GitHub `mg-web-studio` repository and commit the changes. Cloudflare will automatically deploy the new version.
-
-## Files
-
-- `index.html` — page content
-- `styles.css` — design and mobile layout
-- `script.js` — menu, language switch, form and animations
+After publishing, submit one test message. FormSubmit will send a confirmation email to the business inbox. Click the activation link once; future submissions will then be delivered directly.

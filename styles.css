@@ -49,13 +49,8 @@ button, input, textarea { font: inherit; }
   border-bottom: 1px solid var(--line);
 }
 .nav-wrap { min-height: 76px; display: flex; align-items: center; justify-content: space-between; }
-.brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 800; letter-spacing: -.02em; }
-.brand-mark {
-  width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center;
-  background: linear-gradient(135deg, var(--primary), var(--primary-2));
-  box-shadow: 0 10px 30px rgba(124,92,255,.28);
-  color: white; font-size: 14px;
-}
+.brand { display: inline-flex; align-items: center; }
+.brand-logo { width: 188px; height: auto; display: block; }
 .main-nav { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 600; }
 .main-nav > a:not(.nav-cta) { color: var(--muted); }
 .main-nav > a:hover { color: var(--white); }
@@ -208,3 +203,12 @@ h3 { letter-spacing: -.025em; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .btn { transition: none; }
 }
+
+
+.honey-field { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important; }
+.contact-form button:disabled { opacity: .65; cursor: wait; transform: none; }
+.form-status { min-height: 24px; margin: 12px 0 0; font-size: 13px; font-weight: 700; }
+.form-status.sending { color: var(--muted); }
+.form-status.success { color: #8ce7df; }
+.form-status.error { color: #ff9b9b; }
+@media (max-width: 520px) { .brand-logo { width: 158px; } }

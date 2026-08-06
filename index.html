@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -17,8 +18,7 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#top" aria-label="MG Web Studio home">
-        <span class="brand-mark">MG</span>
-        <span>Web Studio</span>
+        <img class="brand-logo" src="logo.svg" alt="MG Web Studio" />
       </a>
 
       <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
@@ -241,7 +241,8 @@
           </div>
         </div>
 
-        <form class="contact-form reveal" id="contact-form">
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <input class="honey-field" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <label>
             <span data-en="Your name" data-fr="Votre nom">Your name</span>
             <input type="text" name="name" required autocomplete="name" />
@@ -258,8 +259,9 @@
             <span data-en="Tell me about the website" data-fr="Parlez-moi du site souhaité">Tell me about the website</span>
             <textarea name="message" rows="5" required></textarea>
           </label>
-          <button class="btn btn-primary" type="submit" data-en="Prepare email" data-fr="Préparer le courriel">Prepare email</button>
-          <p class="form-note" data-en="Clicking the button opens your email app with the project details ready to send." data-fr="Le bouton ouvre votre application de courriel avec les détails du projet prêts à envoyer.">Clicking the button opens your email app with the project details ready to send.</p>
+          <button class="btn btn-primary" type="submit" data-en="Send request" data-fr="Envoyer la demande">Send request</button>
+          <p class="form-note" data-en="Your message is sent directly to MG Web Studio. No email app will open." data-fr="Votre message est envoyé directement à MG Web Studio. Aucune application de courriel ne s’ouvrira.">Your message is sent directly to MG Web Studio. No email app will open.</p>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -267,7 +269,7 @@
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <a class="brand" href="#top"><span class="brand-mark">MG</span><span>Web Studio</span></a>
+      <a class="brand" href="#top" aria-label="MG Web Studio home"><img class="brand-logo" src="logo.svg" alt="MG Web Studio" /></a>
       <p>© <span id="year"></span> MG Web Studio. Montréal, Québec.</p>
     </div>
   </footer>
