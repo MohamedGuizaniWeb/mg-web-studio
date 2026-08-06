@@ -1,25 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 150" role="img" aria-labelledby="title desc">
-  <title id="title">MG Web Studio</title>
-  <desc id="desc">MG monogram inside a browser window followed by the words Web Studio.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 132" role="img" aria-labelledby="title desc">
+  <title id="title">MG Web Studio mark</title>
+  <desc id="desc">Centered MG monogram inside a rounded browser window.</desc>
   <defs>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="accent" x1="8" y1="8" x2="124" y2="124" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#7c5cff"/>
       <stop offset="1" stop-color="#4fd1c5"/>
     </linearGradient>
   </defs>
-  <g transform="translate(5 13)">
-    <rect x="2" y="2" width="126" height="122" rx="26" fill="none" stroke="url(#accent)" stroke-width="7"/>
-    <path d="M2 34h126" fill="none" stroke="url(#accent)" stroke-width="7"/>
-    <circle cx="23" cy="19" r="4" fill="#4fd1c5"/>
-    <circle cx="38" cy="19" r="4" fill="#7c5cff"/>
-    <path d="M23 100V53h10l25 27 25-27h10v47H79V73L58 95 37 73v27Z" fill="#f8fbff"/>
-    <path d="M101 61h22v13h-10v25H97V76h-11V61Z" fill="#4fd1c5" opacity="0"/>
-    <path d="M101 54h21v13h-8c-9 0-15 7-15 16s6 16 15 16h8V86h-11V75h24v35h-22c-19 0-33-13-33-32 0-15 8-24 21-24Z" fill="#f8fbff"/>
-    <path d="M111 43l15-22" stroke="#4fd1c5" stroke-width="8" stroke-linecap="round"/>
-  </g>
-  <g font-family="Inter, Arial, sans-serif" font-weight="800" letter-spacing="-1.6">
-    <text x="155" y="78" font-size="47" fill="#f8fbff">MG</text>
-    <text x="228" y="78" font-size="47" fill="#8ce7df">WEB STUDIO</text>
-    <text x="158" y="112" font-size="15" font-weight="600" letter-spacing="3" fill="#aab9cc">MODERN WEBSITES FOR LOCAL BUSINESS</text>
-  </g>
+
+  <rect x="5" y="5" width="122" height="122" rx="27" fill="#0b1729" stroke="url(#accent)" stroke-width="6"/>
+  <path d="M8 35H124" fill="none" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="24" cy="20" r="4" fill="#4fd1c5"/>
+  <circle cx="39" cy="20" r="4" fill="#7c5cff"/>
+  <path d="M106 34L119 15" fill="none" stroke="#4fd1c5" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- The monogram is optically centered in the usable browser area. -->
+  <text x="66" y="105" text-anchor="middle" fill="#f8fbff"
+        font-family="Inter, Arial Black, Arial, sans-serif" font-size="68" font-weight="900"
+        letter-spacing="-8">MG</text>
 </svg>
