@@ -49,11 +49,11 @@ button, input, textarea { font: inherit; }
   border-bottom: 1px solid var(--line);
 }
 .nav-wrap { min-height: 84px; display: flex; align-items: center; justify-content: space-between; }
-.brand { display: inline-flex; align-items: center; gap: 12px; min-width: 0; }
-.brand-mark { width: 58px; height: 58px; display: block; flex: 0 0 auto; }
+.brand { display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
+.brand-mark { width: 50px; height: 50px; display: block; flex: 0 0 auto; }
 .brand-copy { display: flex; flex-direction: column; justify-content: center; min-width: 0; line-height: 1; }
-.brand-copy strong { color: var(--text); font-size: 18px; font-weight: 800; letter-spacing: .035em; white-space: nowrap; }
-.brand-copy small { margin-top: 7px; color: #8ce7df; font-size: 10.5px; font-weight: 800; letter-spacing: .11em; line-height: 1.2; white-space: nowrap; }
+.brand-copy strong { color: var(--text); font-size: 16px; font-weight: 800; letter-spacing: .03em; white-space: nowrap; }
+.brand-copy small { margin-top: 5px; color: #8ce7df; font-size: 9.25px; font-weight: 800; letter-spacing: .095em; line-height: 1.15; white-space: nowrap; }
 .main-nav { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 600; }
 .main-nav > a:not(.nav-cta) { color: var(--muted); }
 .main-nav > a:hover { color: var(--white); }
@@ -215,8 +215,8 @@ h3 { letter-spacing: -.025em; }
 .form-status.success { color: #8ce7df; }
 .form-status.error { color: #ff9b9b; }
 @media (max-width: 520px) {
-  .brand { gap: 9px; }
-  .brand-mark { width: 48px; height: 48px; }
-  .brand-copy strong { font-size: 14px; }
-  .brand-copy small { margin-top: 5px; font-size: 7.5px; letter-spacing: .07em; }
+  .brand { gap: 8px; }
+  .brand-mark { width: 42px; height: 42px; }
+  .brand-copy strong { font-size: 13px; }
+  .brand-copy small { margin-top: 4px; font-size: 6.8px; letter-spacing: .06em; }
 }
