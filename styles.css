@@ -50,7 +50,7 @@ button, input, textarea { font: inherit; }
 }
 .nav-wrap { min-height: 84px; display: flex; align-items: center; justify-content: space-between; }
 .brand { display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
-.brand-mark { width: 50px; height: 50px; display: block; flex: 0 0 auto; }
+.brand-mark { width: 56px; height: 56px; display: block; flex: 0 0 auto; }
 .brand-copy { display: flex; flex-direction: column; justify-content: center; min-width: 0; line-height: 1; }
 .brand-copy strong { color: var(--text); font-size: 16px; font-weight: 800; letter-spacing: .03em; white-space: nowrap; }
 .brand-copy small { margin-top: 5px; color: #8ce7df; font-size: 9.25px; font-weight: 800; letter-spacing: .095em; line-height: 1.15; white-space: nowrap; }
@@ -216,7 +216,7 @@ h3 { letter-spacing: -.025em; }
 .form-status.error { color: #ff9b9b; }
 @media (max-width: 520px) {
   .brand { gap: 8px; }
-  .brand-mark { width: 42px; height: 42px; }
+  .brand-mark { width: 46px; height: 46px; }
   .brand-copy strong { font-size: 13px; }
   .brand-copy small { margin-top: 4px; font-size: 6.8px; letter-spacing: .06em; }
 }
