@@ -68,6 +68,17 @@ function applyLanguage(nextLanguage) {
 
     packageSub.textContent = `${language === "fr" ? selectedPackage.dataset.priceFr : selectedPackage.dataset.priceEn} • ${language === "fr" ? selectedPackage.dataset.descFr : selectedPackage.dataset.descEn}`;
   }
+
+  const selectedBusiness = document.querySelector(".business-option.selected");
+  if (selectedBusiness && businessTitle && businessSub) {
+    businessTitle.textContent = language === "fr"
+      ? selectedBusiness.dataset.titleFr
+      : selectedBusiness.dataset.titleEn;
+
+    businessSub.textContent = language === "fr"
+      ? selectedBusiness.dataset.descFr
+      : selectedBusiness.dataset.descEn;
+  }
 }
 
 // Apply the visitor's preferred language as soon as the page loads.
@@ -123,6 +134,15 @@ form?.addEventListener("submit", async (event) => {
     }
 
     form.reset();
+    if (businessValue) businessValue.value = "";
+    if (businessTitle) businessTitle.textContent = language === "fr" ? "Choisir un type d’entreprise" : "Choose a business type";
+    if (businessSub) businessSub.textContent = language === "fr"
+      ? "Choisissez la catégorie qui correspond à votre projet"
+      : "Select the business category that fits your project";
+    businessOptions.forEach(item => {
+      item.classList.remove("selected");
+      item.setAttribute("aria-selected", "false");
+    });
     if (packageValue) packageValue.value = "";
     if (packageTitle) packageTitle.textContent = language === "fr" ? "Choisir un forfait" : "Choose a package";
     if (packageSub) packageSub.textContent = language === "fr"
@@ -156,6 +176,48 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 document.querySelector("#year").textContent = new Date().getFullYear();
 
+
+// Custom business selector
+const businessBtn = document.getElementById("business-select-btn");
+const businessMenu = document.getElementById("business-menu");
+const businessValue = document.getElementById("business-value");
+const businessTitle = document.getElementById("business-selected-title");
+const businessSub = document.getElementById("business-selected-sub");
+const businessOptions = document.querySelectorAll(".business-option");
+
+function closeBusinessMenu() {
+  if (!businessMenu || !businessBtn) return;
+  businessMenu.classList.remove("open");
+  businessBtn.setAttribute("aria-expanded", "false");
+}
+
+businessBtn?.addEventListener("click", () => {
+  const open = !businessMenu.classList.contains("open");
+  businessMenu.classList.toggle("open", open);
+  businessBtn.setAttribute("aria-expanded", String(open));
+});
+
+function selectBusiness(option) {
+  if (!option || !businessValue || !businessTitle || !businessSub) return;
+
+  const fr = document.documentElement.lang === "fr";
+  businessValue.value = option.dataset.value;
+  businessTitle.textContent = fr ? option.dataset.titleFr : option.dataset.titleEn;
+  businessSub.textContent = fr ? option.dataset.descFr : option.dataset.descEn;
+
+  businessOptions.forEach(item => {
+    item.classList.remove("selected");
+    item.setAttribute("aria-selected", "false");
+  });
+
+  option.classList.add("selected");
+  option.setAttribute("aria-selected", "true");
+  closeBusinessMenu();
+}
+
+businessOptions.forEach(option => {
+  option.addEventListener("click", () => selectBusiness(option));
+});
 
 // Custom package selector
 const packageBtn = document.getElementById("package-select-btn");
@@ -209,10 +271,14 @@ document.querySelectorAll(".package-quote-btn").forEach(button => {
 });
 
 document.addEventListener("click", (event) => {
+  if (!event.target.closest(".business-field")) closeBusinessMenu();
   if (!event.target.closest(".package-field")) closePackageMenu();
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closePackageMenu();
+  if (event.key === "Escape") {
+    closeBusinessMenu();
+    closePackageMenu();
+  }
 });
 

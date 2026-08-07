@@ -301,10 +301,94 @@
             <span data-en="Email" data-fr="Courriel">Email</span>
             <input type="email" name="email" required autocomplete="email" />
           </label>
-          <label>
-            <span data-en="Business type" data-fr="Type d’entreprise">Business type</span>
-            <input type="text" name="business" placeholder="Restaurant, barber, detailing..." required />
-          </label>
+          <div class="business-field">
+            <span class="business-label" data-en="Business type" data-fr="Type d’entreprise">Business type</span>
+
+            <input type="hidden" name="business" id="business-value" />
+
+            <button class="business-select-btn" id="business-select-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span>
+                <strong id="business-selected-title" data-en="Choose a business type" data-fr="Choisir un type d’entreprise">Choose a business type</strong>
+                <small id="business-selected-sub" data-en="Select the business category that fits your project" data-fr="Choisissez la catégorie qui correspond à votre projet">Select the business category that fits your project</small>
+              </span>
+              <i class="business-chevron" aria-hidden="true"></i>
+            </button>
+
+            <div class="business-menu" id="business-menu" role="listbox" aria-label="Business type options">
+              <button class="business-option" type="button" role="option"
+                      data-value="Restaurant"
+                      data-title-en="Restaurant"
+                      data-title-fr="Restaurant"
+                      data-desc-en="Menus, reservations, hours and customer contact."
+                      data-desc-fr="Menus, réservations, horaires et prise de contact.">
+                <span class="business-option-copy">
+                  <strong data-en="Restaurant" data-fr="Restaurant">Restaurant</strong>
+                  <small data-en="Menus, reservations, hours and customer contact." data-fr="Menus, réservations, horaires et prise de contact.">Menus, reservations, hours and customer contact.</small>
+                </span>
+              </button>
+
+              <button class="business-option" type="button" role="option"
+                      data-value="Barbershop"
+                      data-title-en="Barbershop"
+                      data-title-fr="Barbier"
+                      data-desc-en="Services, gallery, reviews and appointment booking."
+                      data-desc-fr="Services, galerie, avis et prise de rendez-vous.">
+                <span class="business-option-copy">
+                  <strong data-en="Barbershop" data-fr="Barbier">Barbershop</strong>
+                  <small data-en="Services, gallery, reviews and appointment booking." data-fr="Services, galerie, avis et prise de rendez-vous.">Services, gallery, reviews and appointment booking.</small>
+                </span>
+              </button>
+
+              <button class="business-option featured-business-option" type="button" role="option"
+                      data-value="Auto Detailing"
+                      data-title-en="Auto Detailing"
+                      data-title-fr="Esthétique auto"
+                      data-desc-en="Packages, before/after results and quote requests."
+                      data-desc-fr="Forfaits, résultats avant/après et demandes de soumission.">
+                <span class="business-option-copy">
+                  <span class="recommended" data-en="POPULAR" data-fr="POPULAIRE">POPULAR</span>
+                  <strong data-en="Auto Detailing" data-fr="Esthétique auto">Auto Detailing</strong>
+                  <small data-en="Packages, before/after results and quote requests." data-fr="Forfaits, résultats avant/après et demandes de soumission.">Packages, before/after results and quote requests.</small>
+                </span>
+              </button>
+
+              <button class="business-option" type="button" role="option"
+                      data-value="Construction"
+                      data-title-en="Construction"
+                      data-title-fr="Construction"
+                      data-desc-en="Showcase projects, services, trust and lead capture."
+                      data-desc-fr="Présentation des projets, services, crédibilité et capture de clients.">
+                <span class="business-option-copy">
+                  <strong data-en="Construction" data-fr="Construction">Construction</strong>
+                  <small data-en="Showcase projects, services, trust and lead capture." data-fr="Présentation des projets, services, crédibilité et capture de clients.">Showcase projects, services, trust and lead capture.</small>
+                </span>
+              </button>
+
+              <button class="business-option" type="button" role="option"
+                      data-value="Cleaning Service"
+                      data-title-en="Cleaning Service"
+                      data-title-fr="Service de nettoyage"
+                      data-desc-en="Professional presentation, service lists and contact requests."
+                      data-desc-fr="Présentation professionnelle, liste des services et demandes de contact.">
+                <span class="business-option-copy">
+                  <strong data-en="Cleaning Service" data-fr="Service de nettoyage">Cleaning Service</strong>
+                  <small data-en="Professional presentation, service lists and contact requests." data-fr="Présentation professionnelle, liste des services et demandes de contact.">Professional presentation, service lists and contact requests.</small>
+                </span>
+              </button>
+
+              <button class="business-option" type="button" role="option"
+                      data-value="Other"
+                      data-title-en="Other"
+                      data-title-fr="Autre"
+                      data-desc-en="A custom website for another type of business."
+                      data-desc-fr="Un site sur mesure pour un autre type d’entreprise.">
+                <span class="business-option-copy">
+                  <strong data-en="Other" data-fr="Autre">Other</strong>
+                  <small data-en="A custom website for another type of business." data-fr="Un site sur mesure pour un autre type d’entreprise.">A custom website for another type of business.</small>
+                </span>
+              </button>
+            </div>
+          </div>
           <div class="package-field">
             <span class="package-label" data-en="Package" data-fr="Forfait">Package</span>
 
