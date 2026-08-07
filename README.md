@@ -13,3 +13,7 @@ After publishing, submit one test message. FormSubmit will send a confirmation e
 
 ## Portfolio update
 The Modern Barbershop project card now has a stronger visual preview with a barbershop chip, structured text lines, and a barber chair illustration to match the impact of the detailing card.
+
+
+## Barbershop card visual update
+Replaced the barber chair illustration in the MG Web Studio portfolio card with a scissors illustration.
