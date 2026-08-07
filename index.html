@@ -277,16 +277,82 @@
             <span data-en="Business type" data-fr="Type d’entreprise">Business type</span>
             <input type="text" name="business" placeholder="Restaurant, barber, detailing..." required />
           </label>
-          <label>
-            <span data-en="Package" data-fr="Forfait">Package</span>
-            <select name="package" required>
-              <option value="" data-en="Choose a package" data-fr="Choisir un forfait">Choose a package</option>
-              <option value="Starter — $299" data-en="Starter — $299" data-fr="Starter — 299 $">Starter — $299</option>
-              <option value="Business — $599" data-en="Business — $599" data-fr="Business — 599 $">Business — $599</option>
-              <option value="Premium — $899" data-en="Premium — $899" data-fr="Premium — 899 $">Premium — $899</option>
-              <option value="Not sure — need help choosing" data-en="Not sure — help me choose" data-fr="Je ne sais pas — aidez-moi à choisir">Not sure — help me choose</option>
-            </select>
-          </label>
+          <div class="package-field">
+            <span class="package-label" data-en="Package" data-fr="Forfait">Package</span>
+
+            <input type="hidden" name="package" id="package-value" required />
+
+            <button class="package-select-btn" id="package-select-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span>
+                <strong id="package-selected-title" data-en="Choose a package" data-fr="Choisir un forfait">Choose a package</strong>
+                <small id="package-selected-sub" data-en="Select the option that fits your project" data-fr="Choisissez l’option adaptée à votre projet">Select the option that fits your project</small>
+              </span>
+              <i class="package-chevron" aria-hidden="true"></i>
+            </button>
+
+            <div class="package-menu" id="package-menu" role="listbox" aria-label="Package options">
+              <button class="package-option" type="button" role="option"
+                      data-value="Starter — $299"
+                      data-title-en="Starter"
+                      data-title-fr="Starter"
+                      data-price-en="$299"
+                      data-price-fr="299 $"
+                      data-desc-en="One-page website for a simple professional presence."
+                      data-desc-fr="Site d’une page pour une présence professionnelle simple.">
+                <span class="package-option-copy">
+                  <strong data-en="Starter" data-fr="Starter">Starter</strong>
+                  <small data-en="One-page website for a simple professional presence." data-fr="Site d’une page pour une présence professionnelle simple.">One-page website for a simple professional presence.</small>
+                </span>
+                <span class="package-option-price" data-en="$299" data-fr="299 $">$299</span>
+              </button>
+
+              <button class="package-option featured-option" type="button" role="option"
+                      data-value="Business — $599"
+                      data-title-en="Business"
+                      data-title-fr="Business"
+                      data-price-en="$599"
+                      data-price-fr="599 $"
+                      data-desc-en="Up to 4 pages for a complete small-business website."
+                      data-desc-fr="Jusqu’à 4 pages pour un site d’entreprise complet.">
+                <span class="package-option-copy">
+                  <span class="recommended" data-en="MOST POPULAR" data-fr="LE PLUS POPULAIRE">MOST POPULAR</span>
+                  <strong data-en="Business" data-fr="Business">Business</strong>
+                  <small data-en="Up to 4 pages for a complete small-business website." data-fr="Jusqu’à 4 pages pour un site d’entreprise complet.">Up to 4 pages for a complete small-business website.</small>
+                </span>
+                <span class="package-option-price" data-en="$599" data-fr="599 $">$599</span>
+              </button>
+
+              <button class="package-option" type="button" role="option"
+                      data-value="Premium — $899"
+                      data-title-en="Premium"
+                      data-title-fr="Premium"
+                      data-price-en="$899"
+                      data-price-fr="899 $"
+                      data-desc-en="More pages, advanced features and a premium presentation."
+                      data-desc-fr="Plus de pages, fonctionnalités avancées et présentation premium.">
+                <span class="package-option-copy">
+                  <strong data-en="Premium" data-fr="Premium">Premium</strong>
+                  <small data-en="More pages, advanced features and a premium presentation." data-fr="Plus de pages, fonctionnalités avancées et présentation premium.">More pages, advanced features and a premium presentation.</small>
+                </span>
+                <span class="package-option-price" data-en="$899" data-fr="899 $">$899</span>
+              </button>
+
+              <button class="package-option help-option" type="button" role="option"
+                      data-value="Not sure — need help choosing"
+                      data-title-en="Not sure yet"
+                      data-title-fr="Pas encore certain"
+                      data-price-en="Let’s talk"
+                      data-price-fr="Parlons-en"
+                      data-desc-en="Tell me what you need and I’ll recommend the right package."
+                      data-desc-fr="Expliquez-moi vos besoins et je vous recommanderai le bon forfait.">
+                <span class="package-option-copy">
+                  <strong data-en="Not sure yet" data-fr="Pas encore certain">Not sure yet</strong>
+                  <small data-en="Tell me what you need and I’ll recommend the right package." data-fr="Expliquez-moi vos besoins et je vous recommanderai le bon forfait.">Tell me what you need and I’ll recommend the right package.</small>
+                </span>
+                <span class="package-option-price text-price" data-en="Let’s talk" data-fr="Parlons-en">Let’s talk</span>
+              </button>
+            </div>
+          </div>
           <label>
             <span data-en="Tell me about the website" data-fr="Parlez-moi du site souhaité">Tell me about the website</span>
             <textarea name="message" rows="5" required></textarea>

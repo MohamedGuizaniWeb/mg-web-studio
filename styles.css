@@ -395,11 +395,181 @@ h3 { letter-spacing: -.025em; }
   .detailing-copy-lines .mini-cta { width: 76px; height: 26px; }
 }
 
-.contact-form select {
-  appearance: auto;
-  cursor: pointer;
+
+
+/* Premium package selector */
+.package-field {
+  position: relative;
+  margin-bottom: 17px;
 }
-.contact-form select option {
-  background: #0b1728;
-  color: #ffffff;
+.package-label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.package-select-btn {
+  width: 100%;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01)),
+    #0b1728;
+  color: #fff;
+  text-align: left;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.package-select-btn:hover,
+.package-select-btn[aria-expanded="true"] {
+  border-color: rgba(124,92,255,.58);
+  box-shadow: 0 0 0 3px rgba(124,92,255,.11);
+  background:
+    linear-gradient(180deg, rgba(124,92,255,.055), rgba(255,255,255,.01)),
+    #0b1728;
+}
+.package-select-btn > span {
+  display: grid;
+  gap: 4px;
+}
+.package-select-btn strong {
+  font-size: 14px;
+  color: #f7f9fc;
+}
+.package-select-btn small {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.package-chevron {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 auto;
+  border-right: 2px solid #9fa9b8;
+  border-bottom: 2px solid #9fa9b8;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform .2s ease;
+}
+.package-select-btn[aria-expanded="true"] .package-chevron {
+  transform: rotate(225deg) translate(-2px, -2px);
+}
+
+.package-menu {
+  position: absolute;
+  z-index: 80;
+  left: 0;
+  right: 0;
+  top: calc(100% - 6px);
+  padding: 10px;
+  border: 1px solid rgba(124,92,255,.28);
+  border-radius: 18px;
+  background: rgba(10, 22, 38, .97);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 60px rgba(0,0,0,.42);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px) scale(.985);
+  transform-origin: top;
+  transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+}
+.package-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(8px) scale(1);
+}
+.package-option {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 15px 16px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  background: transparent;
+  color: #fff;
+  text-align: left;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.package-option + .package-option {
+  margin-top: 6px;
+}
+.package-option:hover,
+.package-option:focus-visible {
+  outline: none;
+  background: rgba(255,255,255,.045);
+  border-color: rgba(255,255,255,.075);
+  transform: translateX(2px);
+}
+.package-option.selected {
+  background: linear-gradient(90deg, rgba(124,92,255,.14), rgba(79,209,197,.06));
+  border-color: rgba(124,92,255,.28);
+}
+.package-option-copy {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+.package-option-copy strong {
+  font-size: 13px;
+  color: #f8faff;
+}
+.package-option-copy small {
+  max-width: 330px;
+  color: #94a0b1;
+  font-size: 10.5px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.package-option-price {
+  flex: 0 0 auto;
+  min-width: 64px;
+  text-align: right;
+  color: #aef5ed;
+  font-size: 15px;
+  font-weight: 800;
+}
+.package-option-price.text-price {
+  font-size: 11px;
+}
+.featured-option {
+  position: relative;
+  background: rgba(124,92,255,.045);
+}
+.recommended {
+  width: max-content;
+  margin-bottom: 3px;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(124,92,255,.16);
+  color: #c9beff;
+  font-size: 7.5px;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+.help-option {
+  border-top: 1px solid rgba(255,255,255,.045);
+}
+@media (max-width: 560px) {
+  .package-menu {
+    position: static;
+    display: none;
+    margin-top: 8px;
+    transform: none;
+  }
+  .package-menu.open {
+    display: block;
+    transform: none;
+  }
+  .package-option {
+    padding: 14px 13px;
+  }
+  .package-option-copy small {
+    max-width: 230px;
+  }
 }

@@ -137,3 +137,50 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 document.querySelector("#year").textContent = new Date().getFullYear();
+
+
+// Custom package selector
+const packageBtn = document.getElementById("package-select-btn");
+const packageMenu = document.getElementById("package-menu");
+const packageValue = document.getElementById("package-value");
+const packageTitle = document.getElementById("package-selected-title");
+const packageSub = document.getElementById("package-selected-sub");
+const packageOptions = document.querySelectorAll(".package-option");
+
+function closePackageMenu() {
+  if (!packageMenu || !packageBtn) return;
+  packageMenu.classList.remove("open");
+  packageBtn.setAttribute("aria-expanded", "false");
+}
+
+packageBtn?.addEventListener("click", () => {
+  const open = !packageMenu.classList.contains("open");
+  packageMenu.classList.toggle("open", open);
+  packageBtn.setAttribute("aria-expanded", String(open));
+});
+
+packageOptions.forEach(option => {
+  option.addEventListener("click", () => {
+    const fr = document.documentElement.lang === "fr";
+    packageValue.value = option.dataset.value;
+    packageTitle.textContent = fr ? option.dataset.titleFr : option.dataset.titleEn;
+    packageSub.textContent = `${fr ? option.dataset.priceFr : option.dataset.priceEn} • ${fr ? option.dataset.descFr : option.dataset.descEn}`;
+
+    packageOptions.forEach(item => {
+      item.classList.remove("selected");
+      item.setAttribute("aria-selected", "false");
+    });
+    option.classList.add("selected");
+    option.setAttribute("aria-selected", "true");
+    closePackageMenu();
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".package-field")) closePackageMenu();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closePackageMenu();
+});
+
