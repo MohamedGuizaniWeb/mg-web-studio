@@ -1156,3 +1156,73 @@ h3 { letter-spacing: -.025em; }
 .scissors-glow{position:absolute;z-index:1;width:72%;height:44%;left:14%;bottom:18%;border-radius:50%;background:rgba(255,245,232,.20);filter:blur(20px)}
 .scissors-shadow{position:absolute;z-index:1;width:56%;height:12%;left:22%;bottom:16%;border-radius:50%;background:rgba(58,29,12,.24);filter:blur(8px)}
 @media (max-width:720px){.barber-scissors-svg.clean{max-width:220px;width:90%}.barber-scissors-scene{min-height:150px}}
+
+
+/* ===== BARBERSHOP CARD SCISSORS V4 - COMPLETE REPLACEMENT ===== */
+.barber-scissors-v4{
+  position:relative !important;
+  min-height:176px !important;
+  display:grid !important;
+  place-items:center !important;
+  overflow:visible !important;
+}
+.barber-scissors-v4 .barber-scissors-halo{
+  position:absolute;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(255,244,230,.28) 0%, rgba(255,244,230,.12) 46%, rgba(255,244,230,0) 72%);
+  filter:blur(3px);
+  z-index:1;
+}
+.barber-scissors-v4 .barber-scissors-medallion{
+  position:relative;
+  z-index:3;
+  width:138px;
+  height:138px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(145deg, rgba(35,22,14,.92), rgba(82,48,28,.82));
+  border:1px solid rgba(255,239,219,.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.18),
+    0 18px 34px rgba(57,27,10,.28);
+}
+.barber-scissors-v4 .barber-scissors-symbol{
+  display:block;
+  font-family:"Segoe UI Symbol","Arial Unicode MS",sans-serif;
+  font-size:88px;
+  line-height:1;
+  color:#fff1df;
+  transform:rotate(-10deg) translateY(-2px);
+  text-shadow:
+    0 2px 0 rgba(255,255,255,.15),
+    0 10px 18px rgba(0,0,0,.30);
+}
+.barber-scissors-v4 .barber-scissors-shadow-v4{
+  position:absolute;
+  z-index:0;
+  width:124px;
+  height:22px;
+  bottom:8px;
+  border-radius:50%;
+  background:rgba(55,26,11,.30);
+  filter:blur(9px);
+}
+/* Kill all previous hand-built scissors pieces so they can never show */
+.barber-scissors-scene .scissor-blade,
+.barber-scissors-scene .scissor-handle,
+.barber-scissors-scene .scissor-joint,
+.barber-scissors-scene .scissor-tail,
+.barber-scissors-scene .barber-scissors-svg,
+.barber-scissors-scene .scissors-glow,
+.barber-scissors-scene .scissors-shadow{
+  display:none !important;
+}
+@media(max-width:720px){
+  .barber-scissors-v4{min-height:150px !important;}
+  .barber-scissors-v4 .barber-scissors-medallion{width:116px;height:116px;}
+  .barber-scissors-v4 .barber-scissors-symbol{font-size:74px;}
+  .barber-scissors-v4 .barber-scissors-halo{width:126px;height:126px;}
+}
