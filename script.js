@@ -59,6 +59,15 @@ function applyLanguage(nextLanguage) {
   });
 
   if (formStatus) formStatus.textContent = "";
+
+  const selectedPackage = document.querySelector(".package-option.selected");
+  if (selectedPackage && packageTitle && packageSub) {
+    packageTitle.textContent = language === "fr"
+      ? selectedPackage.dataset.titleFr
+      : selectedPackage.dataset.titleEn;
+
+    packageSub.textContent = `${language === "fr" ? selectedPackage.dataset.priceFr : selectedPackage.dataset.priceEn} • ${language === "fr" ? selectedPackage.dataset.descFr : selectedPackage.dataset.descEn}`;
+  }
 }
 
 // Apply the visitor's preferred language as soon as the page loads.
@@ -114,6 +123,15 @@ form?.addEventListener("submit", async (event) => {
     }
 
     form.reset();
+    if (packageValue) packageValue.value = "";
+    if (packageTitle) packageTitle.textContent = language === "fr" ? "Choisir un forfait" : "Choose a package";
+    if (packageSub) packageSub.textContent = language === "fr"
+      ? "Choisissez l’option adaptée à votre projet"
+      : "Select the option that fits your project";
+    packageOptions.forEach(item => {
+      item.classList.remove("selected");
+      item.setAttribute("aria-selected", "false");
+    });
     formStatus.className = "form-status success";
     formStatus.textContent = messages[language].success;
   } catch (error) {
@@ -159,20 +177,34 @@ packageBtn?.addEventListener("click", () => {
   packageBtn.setAttribute("aria-expanded", String(open));
 });
 
-packageOptions.forEach(option => {
-  option.addEventListener("click", () => {
-    const fr = document.documentElement.lang === "fr";
-    packageValue.value = option.dataset.value;
-    packageTitle.textContent = fr ? option.dataset.titleFr : option.dataset.titleEn;
-    packageSub.textContent = `${fr ? option.dataset.priceFr : option.dataset.priceEn} • ${fr ? option.dataset.descFr : option.dataset.descEn}`;
+function selectPackage(option) {
+  if (!option || !packageValue || !packageTitle || !packageSub) return;
 
-    packageOptions.forEach(item => {
-      item.classList.remove("selected");
-      item.setAttribute("aria-selected", "false");
-    });
-    option.classList.add("selected");
-    option.setAttribute("aria-selected", "true");
-    closePackageMenu();
+  const fr = document.documentElement.lang === "fr";
+  packageValue.value = option.dataset.value;
+  packageTitle.textContent = fr ? option.dataset.titleFr : option.dataset.titleEn;
+  packageSub.textContent = `${fr ? option.dataset.priceFr : option.dataset.priceEn} • ${fr ? option.dataset.descFr : option.dataset.descEn}`;
+
+  packageOptions.forEach(item => {
+    item.classList.remove("selected");
+    item.setAttribute("aria-selected", "false");
+  });
+
+  option.classList.add("selected");
+  option.setAttribute("aria-selected", "true");
+  closePackageMenu();
+}
+
+packageOptions.forEach(option => {
+  option.addEventListener("click", () => selectPackage(option));
+});
+
+// Pricing buttons automatically preselect the matching package in the form.
+document.querySelectorAll(".package-quote-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    const value = button.dataset.package;
+    const option = [...packageOptions].find(item => item.dataset.value === value);
+    if (option) selectPackage(option);
   });
 });
 
