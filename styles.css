@@ -594,7 +594,7 @@ h3 { letter-spacing: -.025em; }
   margin: 0 auto;
 }
 .showcase-browser {
-  border: 1px solid rgba(255,255,255,.12);
+  border: none;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -1226,3 +1226,9 @@ h3 { letter-spacing: -.025em; }
   .barber-scissors-v4 .barber-scissors-symbol{font-size:74px;}
   .barber-scissors-v4 .barber-scissors-halo{width:126px;height:126px;}
 }
+
+
+/* Remove dark background behind barbershop scissors */
+.barber-icon-badge{background:transparent !important; box-shadow:none !important; border:none !important;}
+.barber-icon-badge::before,.barber-icon-badge::after{display:none !important;}
+.barber-icon-symbol{filter:drop-shadow(0 8px 12px rgba(98,58,29,.18));}
