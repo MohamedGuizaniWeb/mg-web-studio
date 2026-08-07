@@ -21,3 +21,7 @@ Replaced the barber chair illustration in the MG Web Studio portfolio card with 
 
 ## Scissors visual v2
 Replaced the CSS-built scissors with a cleaner metallic SVG illustration.
+
+
+## Scissors visual v3
+Replaced the barbershop card graphic with a cleaner crossed-scissors SVG.
