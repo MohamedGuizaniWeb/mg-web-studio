@@ -58,6 +58,7 @@ button, input, textarea { font: inherit; }
 .main-nav > a:not(.nav-cta) { color: var(--muted); }
 .main-nav > a:hover { color: var(--white); }
 .nav-cta { background: var(--white); color: #08111f; padding: 10px 16px; border-radius: 999px; }
+.nav-cta:hover { color: #08111f !important; background: #eef3f8; }
 .lang-btn { border: 1px solid var(--line); background: transparent; color: var(--white); padding: 8px 10px; border-radius: 10px; cursor: pointer; }
 .menu-btn { display: none; width: 42px; height: 42px; border: 0; background: transparent; padding: 9px; }
 .menu-btn span { display: block; height: 2px; background: var(--white); margin: 5px 0; border-radius: 2px; }
