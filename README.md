@@ -17,3 +17,7 @@ The Modern Barbershop project card now has a stronger visual preview with a barb
 
 ## Barbershop card visual update
 Replaced the barber chair illustration in the MG Web Studio portfolio card with a scissors illustration.
+
+
+## Scissors visual v2
+Replaced the CSS-built scissors with a cleaner metallic SVG illustration.

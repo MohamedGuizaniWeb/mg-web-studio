@@ -1095,3 +1095,56 @@ h3 { letter-spacing: -.025em; }
   .handle-left { left: 30%; }
   .handle-right { left: 46%; }
 }
+
+
+/* Clean professional barber scissors visual */
+.barber-scissors-scene{
+  position:relative;
+  min-height:176px;
+  display:grid;
+  place-items:center;
+}
+.barber-scissors-svg{
+  position:relative;
+  z-index:3;
+  width:94%;
+  max-width:250px;
+  height:auto;
+  overflow:visible;
+  transform:translateY(-2px);
+}
+.scissors-glow{
+  position:absolute;
+  z-index:1;
+  width:76%;
+  height:46%;
+  left:12%;
+  bottom:18%;
+  border-radius:50%;
+  background:rgba(255,245,232,.22);
+  filter:blur(22px);
+}
+.scissors-shadow{
+  position:absolute;
+  z-index:1;
+  width:58%;
+  height:12%;
+  left:21%;
+  bottom:14%;
+  border-radius:50%;
+  background:rgba(53,25,10,.26);
+  filter:blur(7px);
+}
+
+/* Hide the old CSS-built scissors pieces if cached markup is ever present */
+.scissor-blade,
+.scissor-handle,
+.scissor-joint,
+.scissor-tail{
+  display:none !important;
+}
+
+@media (max-width:720px){
+  .barber-scissors-scene{min-height:150px}
+  .barber-scissors-svg{width:90%;max-width:210px}
+}
