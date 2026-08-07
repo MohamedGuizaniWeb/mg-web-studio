@@ -573,3 +573,9 @@ h3 { letter-spacing: -.025em; }
     max-width: 230px;
   }
 }
+
+
+/* Keep the project message box clean and fixed-size */
+.contact-form textarea {
+  resize: none;
+}
