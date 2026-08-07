@@ -156,8 +156,8 @@ h3 { letter-spacing: -.025em; }
 .edit-note { background: rgba(255,193,7,.1); border: 1px solid rgba(255,193,7,.25); padding: 12px 14px; border-radius: 12px; font-size: 13px; color: #ffe7a3 !important; }
 .contact-form { background: var(--surface); border: 1px solid var(--line); padding: 30px; border-radius: 22px; box-shadow: var(--shadow); }
 .contact-form label { display: grid; gap: 7px; margin-bottom: 17px; font-size: 13px; font-weight: 700; }
-.contact-form input, .contact-form textarea { width: 100%; border: 1px solid var(--line); border-radius: 12px; background: #0b1728; color: white; padding: 13px 14px; outline: none; }
-.contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(124,92,255,.15); }
+.contact-form input, .contact-form textarea, .contact-form select { width: 100%; border: 1px solid var(--line); border-radius: 12px; background: #0b1728; color: white; padding: 13px 14px; outline: none; }
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(124,92,255,.15); }
 .contact-form .btn { width: 100%; border: 0; }
 .form-note { color: var(--muted); font-size: 11px; margin: 12px 0 0; }
 
@@ -393,4 +393,13 @@ h3 { letter-spacing: -.025em; }
   .detailing-wheel { width: 38px; height: 38px; }
   .detailing-copy-lines .line.long { height: 12px; }
   .detailing-copy-lines .mini-cta { width: 76px; height: 26px; }
+}
+
+.contact-form select {
+  appearance: auto;
+  cursor: pointer;
+}
+.contact-form select option {
+  background: #0b1728;
+  color: #ffffff;
 }

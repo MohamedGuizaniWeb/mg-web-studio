@@ -85,6 +85,7 @@ form?.addEventListener("submit", async (event) => {
     name: data.get("name"),
     email: data.get("email"),
     business: data.get("business"),
+    package: data.get("package"),
     message: data.get("message"),
     _replyto: data.get("email"),
     _subject: `New MG Web Studio request from ${data.get("name")}`,
