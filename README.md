@@ -31,3 +31,6 @@ Added a live linked Restaurant & Café portfolio card with a food/coffee illustr
 
 ## Stripe checkout
 Starter, Business and Premium pricing cards are connected to their live Stripe 50% deposit payment links. The original contact/quote flow remains available through the secondary 'Ask a question first' link.
+
+
+Update: restaurant hero mini-card refined with a more premium food visual. Business package copy is standardized to 5 pages across the website.
