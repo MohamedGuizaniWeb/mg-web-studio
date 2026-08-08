@@ -1489,3 +1489,12 @@ h3 { letter-spacing: -.025em; }
 .pricing-notes p:first-child{
   color:#c8d7e6;
 }
+
+
+/* Website maintenance option in package selector */
+.maintenance-option{
+  background:rgba(140,231,223,.035);
+}
+.maintenance-option .package-option-price{
+  color:#8ce7df;
+}
