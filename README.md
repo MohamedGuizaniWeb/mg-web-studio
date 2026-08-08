@@ -28,3 +28,6 @@ Replaced the barbershop card graphic with a cleaner crossed-scissors SVG.
 
 
 Added a live linked Restaurant & Café portfolio card with a food/coffee illustration.
+
+## Stripe checkout
+Starter, Business and Premium pricing cards are connected to their live Stripe 50% deposit payment links. The original contact/quote flow remains available through the secondary 'Ask a question first' link.
