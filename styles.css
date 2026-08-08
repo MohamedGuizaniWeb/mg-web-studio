@@ -1498,3 +1498,100 @@ h3 { letter-spacing: -.025em; }
 .maintenance-option .package-option-price{
   color:#8ce7df;
 }
+
+
+/* Restaurant hero mini-card visual */
+.compact-restaurant-body{
+  position: relative;
+  min-height: 160px;
+  overflow: hidden;
+}
+.compact-restaurant-body .compact-lines{
+  max-width: 56%;
+}
+.compact-restaurant-visual{
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  width: 108px;
+  height: 78px;
+}
+.food-plate{
+  position: absolute;
+  right: 8px;
+  bottom: 10px;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 42%, #fff8f6 0 31%, #ffd9cf 32% 36%, #fff2ee 37% 58%, rgba(234,169,151,.25) 59% 100%);
+  box-shadow: 0 12px 22px rgba(82,43,53,.14);
+}
+.food-garnish{
+  position: absolute;
+  right: 25px;
+  bottom: 30px;
+  width: 36px;
+  height: 20px;
+  border-radius: 50% 45% 50% 45%;
+  background: linear-gradient(135deg, #e6806d 0%, #b84f6f 45%, #6a2746 100%);
+  box-shadow: 0 0 0 6px rgba(255,255,255,.55);
+}
+.food-garnish::before,
+.food-garnish::after{
+  content: "";
+  position: absolute;
+  background: #7b9a63;
+  border-radius: 999px;
+}
+.food-garnish::before{
+  width: 14px;
+  height: 6px;
+  left: -10px;
+  top: 6px;
+  transform: rotate(-24deg);
+}
+.food-garnish::after{
+  width: 12px;
+  height: 5px;
+  right: -8px;
+  top: 7px;
+  transform: rotate(20deg);
+}
+.food-cup{
+  position: absolute;
+  left: 2px;
+  bottom: 20px;
+  width: 24px;
+  height: 30px;
+  border-radius: 0 0 12px 12px;
+  background: linear-gradient(180deg, #fffaf7, #f1d7cf 75%);
+  box-shadow: 0 8px 16px rgba(82,43,53,.12);
+}
+.food-cup::before{
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 2px;
+  width: 20px;
+  height: 6px;
+  border-radius: 999px;
+  background: #fff6f2;
+}
+.food-cup::after{
+  content: "";
+  position: absolute;
+  right: -7px;
+  top: 7px;
+  width: 9px;
+  height: 10px;
+  border: 2px solid #f5d8d0;
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+}
+@media (max-width: 680px){
+  .compact-restaurant-body{min-height: 148px;}
+  .compact-restaurant-visual{width: 98px;height: 72px;right: 10px;}
+  .food-plate{width: 60px;height: 60px;}
+  .food-garnish{right: 22px;bottom: 27px;width: 32px;height: 18px;}
+  .food-cup{width: 22px;height: 28px;}
+}
