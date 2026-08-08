@@ -25,3 +25,6 @@ Replaced the CSS-built scissors with a cleaner metallic SVG illustration.
 
 ## Scissors visual v3
 Replaced the barbershop card graphic with a cleaner crossed-scissors SVG.
+
+
+Added a live linked Restaurant & Café portfolio card with a food/coffee illustration.
